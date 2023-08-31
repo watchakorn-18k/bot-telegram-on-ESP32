@@ -6,7 +6,7 @@ import random
 
 wifi.conn_wifi()
 
-BOT_TOKEN = "XXXXXXXXXX"
+BOT_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 BASE_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
 
 offset = None
@@ -34,9 +34,6 @@ def handle_message(message):
     if user_message == '/start':
         send_message(chat_id, 'Hi!')
     
-
-
-
 def get_updates():
     global offset
     url = BASE_URL + 'getUpdates'
@@ -54,7 +51,8 @@ def get_updates():
 def main():
     while True:
         get_updates()
-main()
 
-    
-    # _thread.start_new_thread(main, ())
+if __name__ == '__main__':
+    import _thread
+    _thread.start_new_thread(main, ())
+
